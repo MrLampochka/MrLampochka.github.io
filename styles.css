@@ -1,0 +1,96 @@
+:root {
+    --dark: rgb(16, 16, 16); /* Основной цвет */
+    --lignt: rgb(239, 239, 239); /* Вторичный цвет */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Для абсолютного позиционирования кнопок */
+}
+
+.header-buttons {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 20px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
+    display: flex; /* Для горизонтального расположения кнопок */
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: var(--dark);
+    cursor: pointer;
+    background: transparent;
+    margin-left: 5px; /* Отступ между кнопками */
+}
+
+button.dark {
+    color: var(--lignt);
+}
+
+button:hover {
+    color: var(--lignt);
+    background-color: var(--dark);
+
+}
+
+button.dark:hover {
+    color: var(--dark);
+    background-color: var(--lignt);
+
+}
+
+#tg-button {
+    background-color: #0088cc;
+}
+
+.content {
+    padding: 10px;
+    opacity: 0;
+    animation: fadeIn 5s forwards;
+}
+
+/* Темная тема */
+.dark {
+    background-color: var(--dark);
+    color: var(--lignt);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+}
